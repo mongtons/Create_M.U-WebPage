@@ -13,11 +13,11 @@
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script type="text/javascript">
             $(function(){
-            $('.mov').click(function(){  
-            var ss = $(this).attr("href");
-            $('html, body').animate({scrollTop:ss});
-            return false;
-            });
+                $('.mov').click(function(){  
+                    var ss = $(this).attr("href");
+                    $('html, body').animate({scrollTop:ss});
+                    return false;
+                });
             });
         </script>
         <script type="text/javascript">
@@ -30,21 +30,21 @@
             var stmnTimer; 
             
             function RefreshStaticMenu() { 
-            var stmnStartPoint, stmnEndPoint; 
-            stmnStartPoint = parseInt(document.getElementById('stand').style.top, 10); 
-            stmnEndPoint = Math.max(document.documentElement.scrollTop, document.body.scrollTop) + stmnGAP2; 
-            if (stmnEndPoint < stmnGAP1) stmnEndPoint = stmnGAP1; 
-            if (stmnStartPoint != stmnEndPoint) { 
-            stmnScrollAmount = Math.ceil( Math.abs( stmnEndPoint - stmnStartPoint ) / 15 ); 
-            document.getElementById('stand').style.top = parseInt(document.getElementById('stand').style.top, 10) + ( ( stmnEndPoint<stmnStartPoint ) ? -stmnScrollAmount : stmnScrollAmount ) + 'px'; 
-            stmnRefreshTimer = stmnScrollSpeed; 
-            }
-            stmnTimer = setTimeout("RefreshStaticMenu();", stmnActivateSpeed); 
+                var stmnStartPoint, stmnEndPoint; 
+                stmnStartPoint = parseInt(document.getElementById('stand').style.top, 10); 
+                stmnEndPoint = Math.max(document.documentElement.scrollTop, document.body.scrollTop) + stmnGAP2; 
+                if (stmnEndPoint < stmnGAP1) stmnEndPoint = stmnGAP1; 
+                if (stmnStartPoint != stmnEndPoint) { 
+                    stmnScrollAmount = Math.ceil( Math.abs( stmnEndPoint - stmnStartPoint ) / 15 ); 
+                    document.getElementById('stand').style.top = parseInt(document.getElementById('stand').style.top, 10) + ( ( stmnEndPoint<stmnStartPoint ) ? -stmnScrollAmount : stmnScrollAmount ) + 'px'; 
+                    stmnRefreshTimer = stmnScrollSpeed; 
+                }
+                stmnTimer = setTimeout("RefreshStaticMenu();", stmnActivateSpeed); 
             } 
             function InitializeStaticMenu() {
-            document.getElementById('stand').style.right = stmnLEFT + 'px';
-            document.getElementById('stand').style.top = document.body.scrollTop + stmnBASE + 'px'; 
-            RefreshStaticMenu();
+                document.getElementById('stand').style.right = stmnLEFT + 'px';
+                document.getElementById('stand').style.top = document.body.scrollTop + stmnBASE + 'px'; 
+                RefreshStaticMenu();
             }
         </script>
     </head>
